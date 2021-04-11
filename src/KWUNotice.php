@@ -90,8 +90,9 @@ function callback($response, $url, $request_info, $user_data, $time) {
     $contents = preg_replace('/\s*<!--.*?-->\s*/', '', $contents); // 주석
     $contents = preg_replace('/\s*<(meta).*?>\s*/', '', $contents); // 닫는 태그 없는 태그
     $contents = preg_replace('/\s*<(style|title|o:p).*?<\/\1>\s*/', '', $contents); // 닫는 태그 있는 태그
-    $contents = preg_replace('/\s*<\/?(span|div|font).*?>\s*/', '', $contents); // 의미없는 태그
-    $contents = preg_replace('/(style|id|class|bgcolor)=("|\').*?\2\s*/', '', $contents); // 속성
+    $contents = preg_replace('/(id|class|name)=("|\').*?\2\s*/', '', $contents); // 의미없는 속성
+    $contents = preg_replace('/\S*?=("|\')\1\s*/', '', $contents); // 잘못된 속성
+    $contents = preg_replace('/src="\//', 'src="https://www.kw.ac.kr/', $contents); // 이미지 주소
     $contents = preg_replace('/\s*>/', '>', $contents);
     $contents = preg_replace('/>\s*</', '><', $contents);
     $items[$user_data[0]]['description'] = htmlspecialchars(trim($contents));

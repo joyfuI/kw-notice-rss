@@ -78,5 +78,9 @@ function callback($response, $url, $request_info, $user_data, $time) {
     global $items;
     @$contents = str_get_html($response)->find('#inner_wrap .rightW .sub_con .table_styleW .board-view .view_td', 0)->innertext; // 내용 추출
     $contents = preg_replace('/\s+/', ' ', $contents); // 공백 압축
+    // 쓸모없는 태그 제거
+    $contents = preg_replace('/\s*<(o:p).*?<\/\1>\s*/', '', $contents); // 닫는 태그 있는 태그
+    $contents = preg_replace('/(id|class|name)=("|\').*?\2\s*/', '', $contents); // 의미없는 속성
+    $contents = preg_replace('/\S*?=("|\')\1\s*/', '', $contents); // 잘못된 속성
     $items[$user_data[0]]['description'] = htmlspecialchars(trim($contents));
 }

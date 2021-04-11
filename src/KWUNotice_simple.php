@@ -3,7 +3,7 @@ include_once './lib/simple_html_dom.php';
 include_once './lib/rollingcurlx.class.php';
 
 $URL = 'https://www.kw.ac.kr/ko/life/notice.jsp?BoardMode=list&tpage=';
-$PAGE = 1; // 해당 페이지까지 파싱
+$PAGE = 3; // 해당 페이지까지 파싱
 
 header('Content-Type: text/xml; charset=UTF-8');
 date_default_timezone_set('Asia/Seoul'); // 기본 시간대 설정
