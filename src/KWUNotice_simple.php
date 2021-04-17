@@ -58,7 +58,7 @@ foreach ($htmls as $html) {
         $date = strtotime(trim($arr[1]));
         $items[$i]['pubDate'] = date('r', $date);
 
-        $items[$i]['guid'] = htmlspecialchars($link);
+        $items[$i]['guid'] = htmlspecialchars($link . '#' . $arr[1]);
 
         $i++;
     }
