@@ -52,7 +52,7 @@ foreach ($htmls as $html) {
         }
 
         $info = $element->find('.info', 0)->plaintext;
-        preg_match('/.+\|(.+)\|(.+)/', $info, $arr); // 날짜와 작성자 추출
+        preg_match('/작성일 .+ \| 수정일 (.+) \| (.+)/', $info, $arr); // 날짜와 작성자 추출
         $items[$i]['author'] = trim($arr[2]);
 
         $date = strtotime(trim($arr[1]));
