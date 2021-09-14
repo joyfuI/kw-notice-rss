@@ -4,6 +4,7 @@
 
 ## RSS 주소
 제 웹호스팅 서버에 php 파일 올려놓고 피드버너에 등록한 주소입니다. 예고 없이 링크가 사라지거나 학교 사이트 구조가 바뀌어서 RSS 갱신이 안 될 수도 있습니다.
+
  게시판 | 주소
  --- | ---
 [광운대학교 공지사항](https://www.kw.ac.kr/ko/life/notice.jsp) | [http://feeds.feedburner.com/KWUNotice](http://feeds.feedburner.com/KWUNotice)
